@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<header>
+  <input type="checkbox" id="check">
+  <label for="check" class="checkbtn">
+    <i class="fa fas fa-bars"></i>
+  </label>
+
+  <ul class="sidebar-data">
+    <li><a [routerLink]="['/about-me']" [routerLinkActive]="['actived']" (click)="onActivate($event)" (click)="closeMenu()">About Me</a></li>
+    <li><a [routerLink]="['/projects']" [routerLinkActive]="['actived']" (click)="onActivate($event)" (click)="closeMenu()">Projects</a></li>
+    <li><a [routerLink]="['/arduino-projects']" [routerLinkActive]="['actived']" (click)="onActivate($event)" (click)="closeMenu()">Arduino Projects</a></li>
+    <li><a [routerLink]="['/contact']" [routerLinkActive]="['actived']" (click)="onActivate($event)" (click)="closeMenu()">Contact</a></li>
+
+    <li class="sidebar-social-icon"><a href="#"><i class="fas fa-file-download icon"></i></a></li>
+    <li class="sidebar-social-icon"><a href="https://github.com/adrianfa25?tab=repositories"><i class="fab fa-github icon"></i></a></li>
+    <li class="sidebar-social-icon"><a href="#"><i class="fab fa-linkedin-in icon"></i></a></li>
+    <li class="sidebar-social-icon"><a href="https://wa.me/972538729571"><i class="fab fa-whatsapp icon"></i></a></li>
+  </ul>
+
+  <ul>
+    <li id="li-menu"><a [routerLink]="['/about-me']" [routerLinkActive]="['actived']" (click)="onActivate($event)">About Me</a></li>
+    <li id="li-menu"><a [routerLink]="['/projects']" [routerLinkActive]="['actived']" (click)="onActivate($event)">Projects</a></li>
+    <li id="logo"><a [routerLink]="['/about-me']" (click)="onActivate($event)">AF</a></li>
+    <li id="li-menu"><a [routerLink]="['/arduino-projects']" [routerLinkActive]="['actived']" (click)="onActivate($event)">Arduino Projects</a></li>
+    <li id="li-menu"><a [routerLink]="['/contact']" [routerLinkActive]="['actived']" (click)="onActivate($event)">Contact</a></li>
+  </ul>
+  
+<div class="social">
+  <ul>
+    <li><a href="#" matTooltip="Download my CV"><i class="fas fa-file-download icon"></i></a></li>
+    <li><a href="https://github.com/adrianfa25?tab=repositories" matTooltip="GitHub"><i class="fab fa-github icon"></i></a></li>
+    <li><a href="#" matTooltip="My LinkedIn"><i class="fab fa-linkedin-in icon"></i></a></li>
+    <li><a href="https://wa.me/972538729571" matTooltip="My Whatsapp"><i class="fab fa-whatsapp icon"></i></a></li>
+  </ul>
+</div>
+
+</header>

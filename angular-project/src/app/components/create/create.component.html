@@ -1,0 +1,111 @@
+<div class="container" *ngIf="project">
+    <h2>{{ title }}</h2>
+
+    <div class="message success" *ngIf="status == 'success'">
+        The project was created succefully. You can see the project<a [routerLink]="['/project', save_project._id]"> here</a>
+    </div>
+    <div class="message failed" *ngIf="status == 'failed'">
+        Could not create the project
+    </div>
+
+    <div class="create-form">
+        <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+            <p>
+                <label for="name">Name</label>
+                <mat-form-field style="width: 100%;" appearance="outline">
+                    <mat-label>Name of the project</mat-label>
+                    <input matInput placeholder='"Project..."' name="name" #name="ngModel" [(ngModel)]="project.name">
+                </mat-form-field>
+            </p>
+            <p>
+                <label for="description">Description</label>
+                <mat-form-field style="width: 100%;" class="example-full-width" appearance="outline">
+                    <mat-label>Description</mat-label>
+                    <textarea matInput placeholder="Ex. It makes me feel..." name="description" #description="ngModel" [(ngModel)]="project.description"></textarea>
+                </mat-form-field>
+            </p>
+            <p>
+                <label for="category">Category</label>
+                <mat-form-field style="width: 100%;" appearance="outline">
+                    <mat-label>Category</mat-label>
+                    <input matInput placeholder='"Arduino..."' name="category" #category="ngModel" [(ngModel)]="project.category">
+                </mat-form-field>
+            </p>
+            <p>
+                <label for="year">Year</label>
+                <mat-form-field style="width: 100%;" appearance="outline">
+                    <mat-label>Year</mat-label>
+                    <input matInput placeholder='"2000..."' type="number" name="year" #year="ngModel" [(ngModel)]="project.year">
+                </mat-form-field>
+            </p>
+            <p>
+                <label for="langs">Langs</label>
+                <mat-form-field style="width: 100%;" appearance="outline">
+                    <mat-label>Langs</mat-label>
+                    <input matInput placeholder='Arduino...' type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs">
+                </mat-form-field>
+            </p>
+            <p>
+                <label for="youtube">Youtube Link</label>
+                <mat-form-field style="width: 100%;" appearance="outline">
+                    <mat-label>Youtube Link</mat-label>
+                    <input matInput placeholder='www.youtube.com...' type="text" name="youtube" #youtube="ngModel" [(ngModel)]="project.youtube">
+                </mat-form-field>
+            </p>
+            <p>
+                <label for="github">GitHub Link</label>
+                <mat-form-field style="width: 100%;" appearance="outline">
+                    <mat-label>GitHub Link</mat-label>
+                    <input matInput placeholder='www.github.com...' type="text" name="github" #github="ngModel" [(ngModel)]="project.github">
+                </mat-form-field>
+            </p>
+
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Select an option</mat-label>
+                    <mat-select name="arduino" #arduino="ngModel" [(ngModel)]="project.arduino">
+                      <mat-option [value]="false">Normal project</mat-option>
+                      <mat-option [value]="true">Fun project</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </p>
+
+            <p>
+                <label for="image">Project's image front page (projects list)</label>
+                <span class="image-edit" *ngIf="project.imagefront" style="float:none;">
+                    <img src="{{ url+'get-image/'+project.imagefront }}" style="width:100px;" />
+                    <br>
+                </span>
+                <input type="file" placeholder="Upload image" (change)="fileChangeEventFront($event)" />     
+            </p>
+            <p>
+                <label for="image">Project's image</label>
+                <span class="image-edit" *ngIf="project.image" style="float:none;">
+                    <img src="{{ url+'get-image/'+project.image }}" style="width:100px;" />
+                    <br>
+                </span>
+                <input type="file" placeholder="Upload image" (change)="fileChangeEvent1($event)" />     
+            </p>
+            <p>
+                <label for="image">Project's image 2</label>
+                <span class="image-edit" *ngIf="project.image" style="float:none;">
+                    <img src="{{ url+'get-image/'+project.image2 }}" style="width:100px;" />
+                    <br>
+                </span>
+                <input type="file" placeholder="Upload image" (change)="fileChangeEvent2($event)" />
+            </p>
+            <p>
+                <label for="image">Project's image 3</label>
+                <span class="image-edit" *ngIf="project.image" style="float:none;">
+                    <img src="{{ url+'get-image/'+project.image3 }}" style="width:100px;" />
+                    <br>
+                </span>
+                <input type="file" placeholder="Upload image" (change)="fileChangeEvent3($event)" />
+            </p>
+
+            <button mat-raised-button color="primary" type="submit" (click)="onActivate($event)" >Continue</button>
+
+
+        </form>
+    </div>
+</div>  

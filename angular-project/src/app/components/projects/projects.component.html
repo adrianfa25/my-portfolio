@@ -1,0 +1,26 @@
+<div id="content-projects">
+  <div class="container">
+
+    <h2>Projects</h2>
+    <div class="project-list">
+      <ul>
+        <li *ngFor="let project of projects" class="project">
+          <ng-container *ngIf="project.arduino == false">
+            <a [routerLink]="['/project', project._id]">
+      
+              <div class="image-box">
+                <div class="image">
+                  <img src="{{ url+'get-image/'+project.imagefront }}" *ngIf="project.imagefront" />
+                </div>
+              </div>
+      
+              <h3>{{ project.name }}</h3>
+              <p>{{ project.category }}</p>
+            </a>
+          </ng-container>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,62 @@
+
+
+<div class="container" *ngIf="project">
+
+    <div class="data">
+            <h2>{{ project.name }}</h2>
+
+            <div class="carousel">
+                
+                <ngb-carousel
+                    [animation]="true"
+                    [interval]=2000
+                    >
+                    <ng-template ngbSlide>
+                    <div class="picsum-img-wrapper">
+                        <img src="{{ url+'get-image/'+project.image }}" *ngIf="project.image" class="carousel" >
+                    </div>
+                    </ng-template>
+                    <ng-template ngbSlide>
+                    <div class="picsum-img-wrapper">
+                        <img src="{{ url+'get-image/'+project.image2 }}" *ngIf="project.image2" class="carousel">
+                    </div>
+                    </ng-template>
+                    <ng-template ngbSlide>
+                    <div class="picsum-img-wrapper">
+                        <img src="{{ url+'get-image/'+project.image3 }}" *ngIf="project.image3"  class="carousel">
+                    </div>
+                    </ng-template>
+                </ngb-carousel>    
+            </div>
+
+            <h3>{{ project.category }}</h3>
+
+            <h3>Langs: {{ project.langs }}</h3>
+
+            <p class="description">
+                {{ project.description }}  
+            </p>
+
+            <p class="links">
+                <a *ngIf="project.youtube" href="{{ project.youtube }}"><i class="fab fa-youtube"></i> Youtube video</a>
+                <br>
+                <br>
+                <a *ngIf="project.github" href="{{ project.github }}"><i class="fab fa-github"></i> GitHub</a>
+
+            </p>
+
+
+            <p *ngIf="confirm == false">
+                <a [routerLink]="['/edit',project._id]"><button style="width: 200px;" mat-raised-button color="basic" href="#">Edit</button></a>
+                <a (click)="setConfirm(true)"><button style="width: 200px;" mat-raised-button color="warn" href="#">Delete</button></a>
+            </p>
+            <p *ngIf="confirm == true">
+                <span class="confirm">Do you want to delete the item?</span><br/>
+                <a (click)="setConfirm(false)"><button style="width: 200px;" mat-raised-button color="basic">Cancel</button></a>
+                <a [routerLink]="['/projects']" (click)="deleteProject(project._id)"><button style="width: 200px;" mat-raised-button color="warn" href="#">Confirm Delete</button></a>
+            </p>
+
+    </div>
+
+
+</div>

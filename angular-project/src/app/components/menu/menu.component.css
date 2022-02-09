@@ -1,0 +1,82 @@
+@media screen and (max-width: 1000px){
+    .social{
+        display: none;
+    }
+}
+
+
+.social ul {
+    width: 20%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: -7.5%;
+    transform: translate(-50%, -50%);
+}@media screen and (max-width: 1600px){
+    .social ul{
+        width: 30%;
+        right: -17%;
+        
+    }
+}@media screen and (max-width: 1199px){
+    .social ul{
+        right: -10%;
+        width: 20%;
+        
+    }
+}
+
+
+
+.social ul li {
+    list-style: none;
+}
+
+.social ul li a {
+    width: 80px;
+    height: 90px;
+    text-align: center;
+    line-height: 90px;
+    font-size: 30px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}@media screen and (max-width: 1400px){
+    .social ul li a{
+        width: 50px;  
+    }
+}
+@media screen and (max-width: 1400px){
+    .social ul li a:hover{
+        background: none;
+    }
+}
+
+.social ul li a .icon {
+    position: relative;
+    color: white;
+    transition: .5s;
+    z-index: 3;
+}
+
+.social ul li a:hover .icon {
+    color: #fff;
+    transform: rotateY(360deg);
+}
+
+
+
+@media screen and (max-width: 1000px){
+.sidebar-social-icon a{
+    font-size: 40px!important;
+    float: left;
+}
+}
+
+@media screen and (max-width: 1000px){
+    .sidebar-social-icon{
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    }

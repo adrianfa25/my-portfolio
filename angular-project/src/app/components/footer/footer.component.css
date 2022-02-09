@@ -1,0 +1,19 @@
+.footer{
+    width: 75%;
+    height: 20px;
+    display: block;
+    margin: 0 auto;
+
+}
+
+.name h2{
+    font-family: "finger";
+    font-size: 1vw;
+    margin-top: 5px;
+    text-align: center;
+}    
+@media screen and (max-width: 1000px){
+    .name h2{
+        font-size: 15px;
+    }
+}

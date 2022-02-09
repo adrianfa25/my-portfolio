@@ -1,0 +1,665 @@
+/* Import custom fonts */
+@font-face {
+    font-family: "yanone";
+    src: url(./fonts/yanone.ttf);
+}
+@font-face {
+    font-family: "finger";
+    src: url(./fonts/finger.ttf);
+}
+@font-face {
+    font-family: "titilium";
+    src: url(./fonts/titilium.ttf);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Open+Sans:wght@600&family=Smythe&display=swap');
+
+
+
+
+
+
+
+
+/* Content */
+
+#content{
+    min-height: 100vh;
+    height: auto;
+    width: 75%;
+    margin: 0px auto;
+    box-shadow: 0px 0px 40px black;
+    background: rgba(255,255,255, 0.7);
+    padding-top: 120px;
+}
+@media screen and (max-width:1000px){
+    #content{
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* General */
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: "yanone";
+    font-size: 20px;
+    background: url('../img/pattern.png');
+    background-attachment: fixed;
+}
+
+.clearfix{
+    float: none;
+    clear: both;
+}
+
+.container h2{
+    display: block;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 26px;
+    padding-left: 30px;
+}
+
+
+
+
+
+
+/* Header */
+
+header{
+    display: block;
+    width: 100%;
+    height: 90px;
+    background: rgba(53, 103, 164, 0.6);
+    position: fixed;
+    text-transform: uppercase;
+    z-index: 999;
+    font-family: "finger";
+}
+
+
+header ul{
+    display: block;
+    width: 60%;
+    height: inherit;
+    margin: 0px auto;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 0px;
+}
+@media screen and (max-width:1000px){
+    header ul{
+        margin-left: -66.25px;
+        width: 100%;
+
+        }
+}
+
+@media screen and (max-width:1000px){
+    header ul #li-menu{
+        display: none;
+    }
+}
+
+
+header ul li{
+    display: inline-block;
+    margin: 0px auto;
+    text-align: center;
+    line-height: 90px;
+    vertical-align: top;
+
+}
+
+header ul li a{
+    display: block;
+    padding-right: 20px;
+    padding-left: 20px;
+    height: inherit;
+    text-decoration: none!important;
+    color: white!important;
+    transition: all 300ms;
+}
+
+header a:hover,
+.actived{
+    background: rgba(0,0,0,0.7);
+}
+@media screen and (max-width:1000px)
+{
+    header a:hover,
+    .actived {
+        background: none;
+    } 
+}
+
+
+
+/* Logo */
+
+#logo{
+    font-family: "finger";
+    font-size: 38px;
+}
+
+#logo a{
+    transition: color 500ms, transform 500ms;
+}
+#logo a:hover {
+    background: transparent;
+    color: black!important;
+    transform: scale(1.50,1.50);
+
+}
+
+
+
+
+
+
+
+
+/* Sidebar */
+#check{
+    display: none;
+}
+
+
+.checkbtn{
+    font-size: 30px;
+    color: white;
+    float: left;
+    line-height: 90px;
+    cursor: pointer;
+    margin-left: 40px;
+    display: none;
+
+  }
+
+
+header .sidebar-data{
+    display: none;
+}
+
+@media screen and (max-width:1000px){
+    .checkbtn{
+        display: block;
+    }
+    header .sidebar-data{
+        margin-left: 0;
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 90px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+      }
+      header .sidebar-data li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+      
+    }
+      header .sidebar-data li a{
+        font-size: 20px;
+      }
+      header .sidebar-data a:hover,a.active{
+        background: #0082e6;
+        color: #0082e6;
+      }
+      #check:checked ~ .sidebar-data{
+        left: 0;
+      }
+  
+}
+@media screen and (max-height:420px){
+    header .sidebar-data li{
+        margin: 20px 0;
+    }}
+
+
+
+
+
+
+
+
+
+
+
+/* About me */
+
+#title{
+    width: 70%;
+    margin-bottom: 100px;
+    margin: 0px auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#title h1{
+    font-family: "finger";
+    font-size: 60px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+}@media screen and (max-width: 1000px){
+    #title h1{
+        line-height: 45px;
+    }
+}
+
+#title h2{
+    font-size: 25px;
+    color: gray;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+article.about{
+    width: 70%;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    font-size: 23px;
+}@media screen and (max-width: 1000px){
+    article.about{
+        width: 90%;
+        
+    }
+}
+.about h2{
+    font-weight: bold;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+
+}
+.about p{
+    padding-top: 20px;
+    padding-bottom: 30px;
+    text-align: justify;
+    font-family: "titilium";
+    text-align: center;
+    line-height: 30px;
+    font-family: 'Smythe', cursive;
+}
+
+
+.skills{
+    width: 100%;
+    font-family: 'Smythe', cursive;
+
+
+}
+.list{
+    float: left ;
+    width: 33.3%;
+    text-align: center;
+}@media screen and (max-width: 370px){
+    .list{
+        float: none;
+        width: auto;
+        margin-bottom: 80px;
+    }
+}
+
+.list h3{
+    font-size: 30px;
+    font-family: 'Smythe', cursive;
+    font-weight: bold;
+}@media screen and (max-width: 500px){
+    .list h3{
+        font-size: 22px;
+    }
+}
+
+.list ul{
+    list-style: none;
+}
+
+.list ul li{
+    margin-bottom: 20px;
+}
+#about-content{
+    height: 100vh;
+}
+
+@media screen and (max-height: 900px){
+    #about-content{
+        height: 950px;
+    }
+}
+@media screen and (max-width: 768px){
+    #about-content{
+        height: 1000px;
+    }
+}
+@media screen and (max-width: 500px){
+    #about-content{
+        height: 1200px;
+    }
+}
+@media screen and (max-width: 370px){
+    #about-content{
+        height: 1700px;
+    }
+}
+
+
+
+
+
+/* Form section */
+
+.container{
+    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 150px;
+}
+
+
+
+
+.image-edit{
+    width: 50px;
+    height: 50px;
+}
+
+
+@media screen and (max-width:1550px){
+    .create-form{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+.create-form form {
+    width: 50%;
+}
+@media screen and (max-width:1400px){
+    .create-form form{
+        width: 100%;
+    }
+}
+@media screen and (max-width:1400px){
+    .create-form form label{
+        text-align: left;
+    }
+}
+
+@media screen and (max-width:1400px){
+    .create-form form button{
+        width: 100%;
+    }
+}
+
+
+
+
+form label{
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+form input[type=text],
+form input[type=number],
+form input[type=email],
+form textarea{
+    width: 80%;
+    padding: 5px;
+}
+
+form button,
+form input[type=submit]{
+    display: block;
+    font-size: 18px;
+    padding: 10px;
+    margin-top: 15px;
+    color: white;
+    background: rgba(53, 103, 164, 0.8);
+    }
+
+.message{
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #eee;
+    border-radius: 9px;
+}
+
+.success{
+    background: green;
+    color: white;
+    padding-left: 10px;
+}
+
+.message a{
+    color: white;
+}
+
+.failed{
+    background: red;
+    color: white;
+}
+
+
+
+/* Projects page */
+
+
+
+.project-list{
+    margin-top: 50px;
+    width: 98%;
+    margin-left: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+.project{
+    list-style: none;
+    display: block;
+    width: 29%;
+    height: auto;
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    float: left;
+}
+@media screen and (max-width: 1282px){
+    .project{
+        display: inline-block;
+        float: none;
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .project{
+        display: inline-block;
+        width: 85%;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.project a h3{
+    margin-top: 20px;
+    font-weight: bold;
+    font-family: "titilium";
+    text-transform: uppercase;
+    transition: all 300ms;
+}
+
+.project a h3:hover{
+    transform: scale(1.50,1.50);
+}
+
+.project a p{
+    font-family: "titilium";
+    font-weight: bold;
+    transition: all 300ms;
+}
+
+.project a p:hover{
+    transform: scale(1.25,1.25);
+}
+
+
+.project img{
+    width: 100%;
+    height: auto;
+    border-radius: 40px;
+}
+
+
+.project a{
+    text-decoration: none;
+    color: black;
+}
+.image-box {
+    overflow: hidden;
+  }
+  
+.image-box {
+    transition: all 400ms;
+}
+  
+.image-box:hover {
+    transform: scale(1.15,1.15);
+
+}
+
+
+
+
+
+/* Detail page */
+
+.data h3{
+    margin-top: 40px;
+    font-weight: bold;
+    font-family: 'Smythe', cursive;
+    font-size: 22px;
+
+
+}
+.data{
+    margin-bottom: 100px;
+    font-family: 'Smythe', cursive;
+    font-size: 22px;
+    line-height: 30px;
+
+}
+
+.data .description{
+    margin-bottom: 100px;
+}
+
+
+.data .links{
+    margin-top: 50px;
+}@media screen and (max-width: 768px){
+    .data .links{
+        text-align: center;
+    }
+}
+.data .links a{
+    color: black;
+    font-size: 24px;
+}
+
+.data .description{
+    text-align: justify;
+    margin-top: 30px;
+}
+
+/* Carousel */
+.carousel{
+    width: 100%;
+    max-height: 600px;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px rgb(80, 78, 78);
+}
+
+.confirm{
+    display: block;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.edit-button{
+    margin-top: 30px;
+    display: block;
+    width: 500px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Contact */
+
+.form form{
+    width: 50%;
+    margin-top: 60px;
+}@media screen and (max-width: 1600px){
+    .form form{
+        margin-left: 3%;
+    }
+}
+@media screen and (max-width: 1000px){
+    .form form{
+        width: 100%;
+        margin-left: auto;
+    }
+}
+.form button{
+    width: 200px;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+
+}
+
+.form .mat-form-field{
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+
+
+
+
+
+
+/* Footer */
+
